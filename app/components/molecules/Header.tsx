@@ -1,6 +1,5 @@
 // app/components/molecules/Header.tsx
 import { Container, Navbar, Nav } from "react-bootstrap";
-import HeaderActions from "app/components/atoms/HeaderActions";
 import Logo from "app/components/atoms/Logo";
 
 const LINKS = [
@@ -16,8 +15,8 @@ export default function Header() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
-    <Navbar expand="lg" sticky="top" bg="black" data-bs-theme="dark" className="border-bottom border-secondary">
-      <Container fluid> {/* fluid para aprovechar todo el ancho */}
+    <Navbar expand="lg" sticky="top" bg="dark" variant="dark" className="border-bottom border-secondary">
+      <Container fluid>
         {/* Izquierda: logo/brand */}
         <Navbar.Brand
           href="#about"
@@ -33,22 +32,21 @@ export default function Header() {
         {/* Contenido colapsable */}
         <Navbar.Collapse id="main-nav" className="align-items-center w-100">
           {/* Centro: links */}
-          <Nav className="mx-auto gap-3"> {/* <-- el truco: mx-auto + gap */}
-            {LINKS.map(l => (
+          <Nav className="mx-auto gap-3">
+            {LINKS.map((l) => (
               <Nav.Link
                 key={l.id}
-                href={`#${l.id}`}
-                onClick={(e) => { e.preventDefault(); scrollTo(l.id); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(l.id);
+                }}
               >
                 {l.label}
               </Nav.Link>
             ))}
           </Nav>
 
-          {/* Derecha: acciones */}
-          <div className="d-flex gap-2 ms-lg-3">
-            <HeaderActions />
-          </div>
+          {/* Aquí eliminamos HeaderActions */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

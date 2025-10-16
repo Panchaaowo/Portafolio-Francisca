@@ -1,10 +1,9 @@
-
 /* ===== Header propio (evita choque con Bootstrap) ===== */
 .site-header {
   background: #0b1020;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 /* Contenedor interno */
@@ -22,14 +21,14 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex !important;          /* fuerza fila */
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
   gap: 24px;
   flex-wrap: nowrap;
 }
 
 .site-header nav ul.menu > li {
-  display: inline-flex;  /* evita ocupar 100% */
+  display: inline-flex;
   margin: 0;
   padding: 0;
 }
@@ -51,5 +50,54 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .site-header nav ul.menu { gap: 14px; flex-wrap: wrap; }
+  .site-header nav ul.menu { 
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .site-header nav ul.menu > li {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+/* Asegura que el navbar se quede arriba, tenga un buen fondo y sea visible */
+.navbar-custom {
+  background-color: #0b1020;  /* Fondo oscuro */
+  z-index: 1050;  /* Asegura que el navbar está sobre otros elementos */
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: #e6eefc;  /* Color claro para los enlaces */
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover,
+.navbar-custom .navbar-nav .nav-link:focus {
+  color: #f39c12;  /* Color amarillo cuando el usuario pasa el ratón por encima */
+  transform: translateY(-2px);  /* Efecto de elevación */
+}
+
+.navbar-custom .navbar-brand {
+  color: #e6eefc;  /* Color del logo */
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: #f39c12;  /* Color del borde del botón de hamburguesa */
+}
+
+/* Responsividad: Asegúrate que el menú se apile en móviles */
+@media (max-width: 768px) {
+  .navbar-custom .navbar-collapse {
+    background-color: #0b1020;  /* Fondo para el colapso */
+  }
+  
+  .navbar-custom .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    padding: 10px 0;  /* Más espacio entre los enlaces */
+  }
 }
