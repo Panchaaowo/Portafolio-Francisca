@@ -1,15 +1,55 @@
-@import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+/* ===== Header propio (evita choque con Bootstrap) ===== */
+.site-header {
+  background: #0b1020;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+/* Contenedor interno */
+.site-header .nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo izq, menú der */
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+/* ----- Menú horizontal ----- */
+.site-header nav ul.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex !important;          /* fuerza fila */
+  flex-direction: row !important;
+  gap: 24px;
+  flex-wrap: nowrap;
+}
+
+.site-header nav ul.menu > li {
+  display: inline-flex;  /* evita ocupar 100% */
+  margin: 0;
+  padding: 0;
+}
+
+.site-header nav ul.menu a {
+  color: #e6eefc;
+  text-decoration: none;
+  display: block;
+  padding: 10px 4px;
+  border-radius: 8px;
+  transition: background .15s ease, transform .15s ease;
+}
+
+.site-header nav ul.menu a:hover,
+.site-header nav ul.menu a:focus {
+  background: rgba(255,255,255,.06);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-header nav ul.menu { gap: 14px; flex-wrap: wrap; }
 }

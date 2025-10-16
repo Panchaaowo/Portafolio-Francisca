@@ -1,3 +1,6 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css"; // si lo instalaste
+import "./app.css";
 import {
   isRouteErrorResponse,
   Links,
