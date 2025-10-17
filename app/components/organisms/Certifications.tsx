@@ -6,7 +6,7 @@ import { certificationsData } from "~/data/certifications";
 export default function Certifications() {
   const list = Array.isArray(certificationsData) ? certificationsData : [];
   return (
-    <section id="certifications" className="py-5">
+    <section id="certifications" className="py-5 text-white">
       <h2 className="mb-4">Certificaciones</h2>
       {list.length === 0 ? (
         <p className="text-warning">No hay certificaciones cargadas.</p>

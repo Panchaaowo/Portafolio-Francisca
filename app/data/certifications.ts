@@ -2,10 +2,11 @@
 export type Certification = {
   title: string;
   issuer: string;
-  date: string;          // mejor ISO: YYYY-MM-DD
+  date: string;         
   credentialId: string;
-  image: string;         // miniatura (opcional)
-  verifyUrl: string;     // ← link externo de verificación
+  image: string;         
+  verifyUrl: string;    
+  textClass?: string;    
 };
 
 export const certificationsData: Certification[] = [
@@ -15,7 +16,8 @@ export const certificationsData: Certification[] = [
     date: "2025-10-15",
     credentialId: "ABC-123",
     image: "app/assts/img/Ethical.png",
-    verifyUrl: "public/certs/certificate.pdf",              // ← tu link
+    verifyUrl: "public/certs/certificate.pdf",
+    textClass: "text-white",               // ← texto blanco
   },
   {
     title: "Python Essentials",
@@ -23,6 +25,16 @@ export const certificationsData: Certification[] = [
     date: "2024-06-03",
     credentialId: "XYZ-987",
     image: "app/assts/img/python.png",
-    verifyUrl: "public/certs/python.pdf",  // ← tu link
+    verifyUrl: "public/certs/python.pdf",
+    textClass: "text-white",               // ← texto blanco
+  },
+  {
+    title: " Certified ISO/IEC 27001 Foundation",
+    issuer: "PECB",
+    date: "2025-10-16",
+    credentialId: "XYZ-987",
+    image: "app/assts/img/ISO.png",
+    verifyUrl: "public/certs/isooo.pdf",
+    textClass: "text-white",               // ← texto blanco
   },
 ];
