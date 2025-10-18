@@ -21,9 +21,12 @@ export default function Header() {
         <Navbar.Brand
           href="#about"
           onClick={(e) => { e.preventDefault(); scrollTo("about"); }}
-          className="fw-bold"
+          className="fw-bold brand-title"   // 👈 clase para color/fuente
+          aria-label="Portafolio"
         >
-          <Logo />
+          {/* Usa uno de los dos: tu Logo o el texto Portafolio */}
+          {/* <Logo /> */}
+          Portafolio
         </Navbar.Brand>
 
         {/* Hamburguesa en móvil */}
@@ -36,17 +39,13 @@ export default function Header() {
             {LINKS.map((l) => (
               <Nav.Link
                 key={l.id}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo(l.id);
-                }}
+                href={`#${l.id}`}
+                onClick={(e) => { e.preventDefault(); scrollTo(l.id); }}
               >
                 {l.label}
               </Nav.Link>
             ))}
           </Nav>
-
-          {/* Aquí eliminamos HeaderActions */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

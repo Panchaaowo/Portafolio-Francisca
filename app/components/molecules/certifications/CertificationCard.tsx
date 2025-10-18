@@ -1,6 +1,13 @@
 // app/components/molecules/certifications/CertificationCard.tsx
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import {
+  BsAward,
+  BsBuilding,
+  BsCalendar2,
+  BsHash,
+  BsBoxArrowUpRight,
+} from "react-icons/bs";
 
 type Props = {
   title: string;
@@ -33,14 +40,37 @@ export default function CertificationCard({
         }}
       />
       <Card.Body>
-        <Card.Title className="mb-1">{title}</Card.Title>
-        <Card.Subtitle className="text-muted mb-2">{issuer}</Card.Subtitle>
+        <Card.Title className="mb-1 d-flex align-items-center gap-2">
+          <BsAward aria-hidden className="text-primary" />
+          <span>{title}</span>
+        </Card.Title>
+
+        <Card.Subtitle className="text-muted mb-2 d-flex align-items-center gap-2">
+          <BsBuilding aria-hidden />
+          <span>{issuer}</span>
+        </Card.Subtitle>
+
         <Card.Text className="small mb-3">
-          Fecha: {new Date(date).toLocaleDateString()} <br />
-          ID: {credentialId}
+          <div className="d-flex align-items-center gap-2 mb-1">
+            <BsCalendar2 aria-hidden />
+            <span>Fecha: {new Date(date).toLocaleDateString()}</span>
+          </div>
+          <div className="d-flex align-items-center gap-2">
+            <BsHash aria-hidden />
+            <span>ID: {credentialId}</span>
+          </div>
         </Card.Text>
-        <Button as="a" href={verifyUrl} target="_blank" rel="noreferrer" variant="primary">
-          Validar 
+
+        <Button
+          as="a"
+          href={verifyUrl}
+          target="_blank"
+          rel="noreferrer"
+          variant="primary"
+          className="d-inline-flex align-items-center gap-2"
+        >
+          <span>Validar</span>
+          <BsBoxArrowUpRight aria-hidden />
         </Button>
       </Card.Body>
     </Card>

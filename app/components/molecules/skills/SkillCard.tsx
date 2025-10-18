@@ -1,9 +1,35 @@
-type Props = { name: string; icon?: string };
-export default function SkillCard({ name, icon }: Props) {
+import React from "react";
+import { Card } from "react-bootstrap";
+import type { IconType } from "react-icons";
+
+type Props = {
+  name: string;
+  iconUrl?: string;   // usa tu SVG local si quieres
+  Icon?: IconType;    // o un icono de react-icons
+  color?: string;     // color de marca (hex)
+};
+
+export default function SkillCard({ name, iconUrl, Icon, color }: Props) {
   return (
-    <div className="p-3 rounded bg-secondary-subtle text-dark text-center h-100">
-      {icon && <i className={`bi ${icon} fs-1 d-block mb-2`} />}
-      <strong>{name}</strong>
-    </div>
+    <Card className="skill-tile h-100 text-center border-0 p-3" title={name}>
+      <div className="d-grid gap-2 align-content-center justify-items-center">
+        {/* Contenedor del icono: tamaño fijo y centrado */}
+        <div className="skill-icon-wrap">
+          {Icon ? (
+            <Icon size={28} color={color || "var(--primary-500)"} />
+          ) : iconUrl ? (
+            <img
+              src={iconUrl}
+              alt={name}
+              width={28}
+              height={28}
+              style={{ objectFit: "contain" }}
+              onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = "none")}
+            />
+          ) : null}
+        </div>
+        <div className="small fw-semibold">{name}</div>
+      </div>
+    </Card>
   );
 }
