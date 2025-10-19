@@ -537,3 +537,17 @@ a:hover, a:focus {
   );
   opacity:.6;
 }
+:root { --nav-h: 64px; }              /* ajusta al alto real de tu header */
+
+body { padding-top: var(--nav-h); }
+
+.section {
+  scroll-margin-top: calc(var(--nav-h) + 16px);
+  padding-block: 48px;                /* usa padding vertical en secciones */
+}
+
+.section-title-neon {
+  margin-block: 0 24px;
+  color: #e8fff5;
+  text-shadow: 0 0 12px rgba(69, 255, 199, 0.4);
+}
