@@ -4,16 +4,16 @@ import type { IconType } from "react-icons";
 
 type Props = {
   name: string;
-  iconUrl?: string;   // usa tu SVG local si quieres
-  Icon?: IconType;    // o un icono de react-icons
-  color?: string;     // color de marca (hex)
+  iconUrl?: string;   
+  Icon?: IconType;    
+  color?: string;    
 };
 
 export default function SkillCard({ name, iconUrl, Icon, color }: Props) {
   return (
     <Card className="skill-tile h-100 text-center border-0 p-3" title={name}>
       <div className="d-grid gap-2 align-content-center justify-items-center">
-        {/* Contenedor del icono: tamaño fijo y centrado */}
+        {}
         <div className="skill-icon-wrap">
           {Icon ? (
             <Icon size={28} color={color || "var(--primary-500)"} />

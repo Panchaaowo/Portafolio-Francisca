@@ -1,31 +1,30 @@
-// app/components/organisms/Skills.tsx
 "use client";
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import SkillCard from "../molecules/skills/SkillCard";
 
-// Icons de react-icons/si (Simple Icons)
+
 import {
   SiHtml5, SiCss3, SiJavascript, SiReact, SiTypescript, SiBootstrap, SiSwagger,
-  SiOpenjdk,              // Java (en vez de SiJava)
+  SiOpenjdk,             
   SiSpring, SiPython, SiNodedotjs, SiPostgresql, SiMysql,
   SiKotlin, SiAndroidstudio, SiGithub, SiPostman, SiApachemaven,
 } from "react-icons/si";
 
-// Colores de marca (opcionales)
+
 const brand = {
   html: "#E34F26",
   css: "#1572B6",
   js: "#F7DF1E",
   react: "#61DAFB",
-  ts: "#3178C6",          // ✅ faltaba esta key (TypeScript)
+  ts: "#3178C6",         
   bootstrap: "#7952B3",
   swagger: "#85EA2D",
-  java: "#EA2D2E",        // usaremos con SiOpenjdk
+  java: "#EA2D2E",       
   spring: "#6DB33F",
   python: "#3776AB",
   node: "#339933",
-  sql: "#CC2927",         // genérico
+  sql: "#CC2927",        
   mysql: "#4479A1",
   kotlin: "#7F52FF",
   android: "#3DDC84",
@@ -42,7 +41,7 @@ const skillCategories = [
       { name: "CSS", Icon: SiCss3, color: brand.css },
       { name: "JavaScript", Icon: SiJavascript, color: brand.js },
       { name: "React", Icon: SiReact, color: brand.react },
-      { name: "TypeScript", Icon: SiTypescript, color: brand.ts }, // ✅ ahora existe
+      { name: "TypeScript", Icon: SiTypescript, color: brand.ts }, 
       { name: "Bootstrap", Icon: SiBootstrap, color: brand.bootstrap },
     ],
   },

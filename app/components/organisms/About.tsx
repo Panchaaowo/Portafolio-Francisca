@@ -1,10 +1,9 @@
-// app/components/organisms/About.tsx
 import { Container, Row, Col, Image, Card } from "react-bootstrap";
 
 export default function About() {
   return (
     <section id="about" className="section position-relative">
-      {/* Resplandor de fondo (sutil) */}
+      {}
       <div
         aria-hidden
         className="position-absolute rounded-circle"
@@ -45,7 +44,7 @@ export default function About() {
                 <Card className="p-2 border-0" style={{ background: "transparent" }}>
                   {/* Usa /public/yo.png */}
                   <Image
-                    src="app/assts/img/yo.png"
+                    src="app/assts/img/yooox2.png"
                     alt="Foto de perfil"
                     rounded
                     className="border"

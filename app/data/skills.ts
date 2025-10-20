@@ -1,4 +1,3 @@
-// app/data/skills.ts
 export type SkillItem = { name: string };
 
 export const skillsData: {

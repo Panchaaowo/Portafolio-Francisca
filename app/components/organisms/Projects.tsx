@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import ProjectCard from "app/components/molecules/projects/ProjectCard";
 import { projectsData } from "app/data/projects";
 
-// Icons
+
 import type { IconType } from "react-icons";
 import {
   SiReact, SiTypescript, SiBootstrap, SiTailwindcss,
@@ -11,7 +11,7 @@ import {
   SiJavascript, SiNodedotjs, SiKotlin, SiAndroidstudio, SiGithub
 } from "react-icons/si";
 
-// Mapa nombre -> icono (puedes ampliarlo)
+
 const TAG_ICON: Record<string, IconType> = {
   React: SiReact,
   "TypeScript": SiTypescript,
@@ -30,7 +30,7 @@ const TAG_ICON: Record<string, IconType> = {
   GitHub: SiGithub,
 };
 
-// Colores opcionales por tag
+
 const TAG_COLOR: Record<string, string> = {
   React: "#61DAFB",
   TypeScript: "#3178C6",
@@ -69,7 +69,7 @@ export default function Projects() {
                 link={p.link}
               />
 
-              {/* Chips con íconos (fuera del ProjectCard, para no tocarlo) */}
+              {}
               {p.tags?.length ? (
                 <div className="d-flex flex-wrap gap-2">
                   {p.tags.map((t) => {

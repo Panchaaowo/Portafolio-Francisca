@@ -2,7 +2,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import NavLinks from './NavLinks';
 
-// Mock del IntersectionObserver
 const mockIntersectionObserver = vi.fn();
 mockIntersectionObserver.mockReturnValue({
   observe: () => null,

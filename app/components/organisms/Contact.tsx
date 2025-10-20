@@ -1,4 +1,3 @@
-// app/components/organisms/Contact.tsx
 "use client";
 import { Row, Col, Card } from "react-bootstrap";
 import { Mail, MessageCircle, Linkedin, Github } from "lucide-react";
@@ -18,10 +17,10 @@ export default function Contact() {
         ¿Tienes un proyecto en mente o simplemente quieres conectar? ¡Escríbeme!
       </p>
 
-      {/* 👇 ocupa todo el ancho */}
+      {}
       <Row className="g-3">
         {contactMethods.map(({ icon: Icon, title, value, link, tone }) => (
-          // 1x4 en móvil, 2x2 desde md
+          
           <Col xs={12} md={6} key={title}>
             <Card className="project-card p-3 border-0 h-100">
               <a

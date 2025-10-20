@@ -17,7 +17,7 @@ export const certificationsData: Certification[] = [
     credentialId: "ABC-123",
     image: "app/assts/img/Ethical.png",
     verifyUrl: "public/certs/certificate.pdf",
-    textClass: "text-white",               // ← texto blanco
+    textClass: "text-white",              
   },
   {
     title: "Python Essentials",
@@ -26,7 +26,7 @@ export const certificationsData: Certification[] = [
     credentialId: "XYZ-987",
     image: "app/assts/img/python.png",
     verifyUrl: "public/certs/python.pdf",
-    textClass: "text-white",               // ← texto blanco
+    textClass: "text-white",             
   },
   {
     title: " Certified ISO/IEC 27001 Foundation",
@@ -35,6 +35,6 @@ export const certificationsData: Certification[] = [
     credentialId: "XYZ-987",
     image: "app/assts/img/ISO.png",
     verifyUrl: "public/certs/isooo.pdf",
-    textClass: "text-white",               // ← texto blanco
+    textClass: "text-white",               
   },
 ];

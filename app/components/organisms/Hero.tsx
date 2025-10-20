@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="py-5">
       <Row className="align-items-center">
-        {/* ocupa todo el ancho para que no corte la línea */}
+        {}
         <Col md={12}>
           <h1 className="hero-title text-start">
             Hola, soy <span className="title-accent">Francisca Miranda</span>

@@ -1,9 +1,7 @@
-// app/components/molecules/certifications/CertificationCard.test.tsx
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import CertificationCard from './CertificationCard'
 
-// ✅ Mock correcto para Card: subcomponentes como propiedades del default export
 vi.mock('react-bootstrap/Card', () => {
   const Card = ({ children, className, ...rest }: any) => (
     <div data-testid="card" className={className} {...rest}>
@@ -22,7 +20,6 @@ vi.mock('react-bootstrap/Card', () => {
   return { default: Card }
 })
 
-// ✅ Mock de Button: respeta `as="a"` para link externo
 vi.mock('react-bootstrap/Button', () => ({
   default: ({ as, children, ...props }: any) =>
     as === 'a'
@@ -30,7 +27,6 @@ vi.mock('react-bootstrap/Button', () => ({
       : <button data-testid="button" {...props}>{children}</button>,
 }))
 
-// ✅ Mock de iconos sin variables top-level (evita el hoisting error)
 vi.mock('react-icons/bs', async () => {
   const MockIcon = (props: any) => <span data-testid="icon" {...props} />
   return {

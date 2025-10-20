@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import ProjectCard from '../projects/ProjectCard';
 
-// Mock de Card y Button de react-bootstrap
 vi.mock('react-bootstrap/Card', () => ({
   default: ({ children, className }: any) => <div className={className}>{children}</div>,
   Body: ({ children }: any) => <div>{children}</div>,
@@ -52,4 +51,4 @@ describe('ProjectCard', () => {
     expect(button).toHaveAttribute('target', '_blank');
     expect(button).toHaveAttribute('rel', 'noreferrer');
   });
-}); // Cierre del bloque describe
+}); 

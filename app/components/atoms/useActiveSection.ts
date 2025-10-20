@@ -1,4 +1,3 @@
-// app/components/atoms/useActiveSection.ts
 import { useEffect, useState } from "react";
 
 export default function useActiveSection(sectionIds: string[], offset = 120) {

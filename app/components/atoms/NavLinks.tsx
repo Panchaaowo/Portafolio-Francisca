@@ -18,9 +18,8 @@ const LINKS = [
 export default function NavLinks({ onNav }: Props) {
   const [activeId, setActiveId] = useState<LinkDef["id"]>(LINKS[0].id);
 
-  // Contenedor UL
   const containerRef = useRef<HTMLUListElement | null>(null);
-  // Refs de <a> usando Map para evitar errores de tipos
+ 
   const linkRefs = useRef<Map<LinkDef["id"], HTMLAnchorElement>>(new Map());
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: LinkDef["id"]) => {
@@ -30,7 +29,7 @@ export default function NavLinks({ onNav }: Props) {
     setActiveId(id);
   };
 
-  /* Scroll spy */
+  
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
@@ -56,7 +55,7 @@ export default function NavLinks({ onNav }: Props) {
     return () => obs.disconnect();
   }, []);
 
-  /* Indicador deslizante */
+  
   const indicatorStyle = useMemo<React.CSSProperties>(() => {
     const container = containerRef.current;
     const el = linkRefs.current.get(activeId) ?? null;
@@ -69,7 +68,7 @@ export default function NavLinks({ onNav }: Props) {
     return { transform: `translateX(${left}px)`, width: `${lRect.width}px`, opacity: 1 };
   }, [activeId]);
 
-  // Recalcular en resize
+
   useEffect(() => {
     const onResize = () => setActiveId((v) => v);
     window.addEventListener("resize", onResize);

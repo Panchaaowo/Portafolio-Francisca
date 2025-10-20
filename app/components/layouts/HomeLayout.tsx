@@ -1,4 +1,3 @@
-// app/components/molecules/HomeLayout.tsx
 import { Container } from "react-bootstrap";
 import Header from "app/components/molecules/Header";  // Asegúrate de que este sea el componente correcto de Header
 import Hero from "app/components/organisms/Hero";
@@ -11,14 +10,14 @@ import Contact from "app/components/organisms/Contact";
 export default function HomeLayout() {
   return (
     <>
-      <Header /> {/* Aquí se incluirá tu barra de navegación */}
+      <Header /> {}
       <main className="main-content bg-dark text-light py-5">
         <Container>
           <Hero />
           <About />
           <Skills />
           <Projects />
-          <Certifications /> {/* Aquí se coloca entre Projects y Contact */}
+          <Certifications /> {}
           <Contact />
         </Container>
       </main>
