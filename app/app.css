@@ -1,49 +1,41 @@
-/* =========================================================
-   Portfolio Theme (React-Bootstrap) — Paleta Única: Amatista/Violeta
-   Mantiene tu estructura y clases, pero todo sale de los mismos tokens.
-   ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap');
 
-/* Fonts (opcional) */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap');
-/* Reemplaza tu import de Google Fonts por este */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Sora:wght@700;800&display=swap');
 
-/* Cambia familias: */
 body { font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 h1,h2,h3,h4,h5,h6 { font-family: Sora, Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 
-/* ===== Tokens (1 sola paleta) ===== */
 :root{
-  /* Base (azul petróleo oscuro) */
+  
   --bg:           #070B10;
   --bg-soft:      #0D131A;
   --surface:      #101922;
   --text:         #E6F1F5;
   --muted:        #A7B4BF;
 
-  /* Primario (mint/teal) */
+  
   --primary-700:  #0E7C66;
   --primary-600:  #149E7D;
-  --primary-500:  #64F2C0;  /* acento */
+  --primary-500:  #64F2C0; 
   --primary-400:  #98F7D8;
   --primary-300:  #CFFCEC;
 
-  /* Derivados */
+  
   --line:         rgba(100,242,192,.18);
   --ring:         0 0 0 3px rgba(100,242,192,.28);
 
-  /* Radios y sombras (igual que antes) */
+  
   --radius-xs: 8px; --radius: 14px; --radius-lg: 18px;
   --shadow-1: 0 6px 18px rgba(0,0,0,.25);
   --shadow-2: 0 12px 28px rgba(0,0,0,.35);
 }
 
 
-/* ===== Base + tipografía ===== */
+
 body{
   margin: 0;
-  /* Reemplaza tu background por este */
+  
   background:
     radial-gradient(1200px 800px at 15% -10%, #0F1720 0%, transparent 40%),
     radial-gradient(900px 600px at 90% 10%, #0B1320 0%, transparent 45%),
@@ -66,16 +58,15 @@ a { color: var(--primary-400); text-decoration: none; }
 a:hover, a:focus { color: var(--primary-300); }
 :focus-visible{ outline: none; box-shadow: var(--ring); border-radius: 8px; }
 
-/* ===== Main layout ===== */
+
 .main-content {
-  background: transparent; /* usamos el radial del body */
+  background: transparent; 
   padding-block: clamp(32px, 6vw, 72px);
 }
 .container, .container-fluid {
   max-width: 1120px;
 }
 
-/* ===== Header / Navbar ===== */
 .navbar {
   position: sticky; top: 0; z-index: 1040;
   background: linear-gradient(180deg, rgba(14,15,20,.90), rgba(14,15,20,.70));
@@ -98,7 +89,6 @@ a:hover, a:focus { color: var(--primary-300); }
   text-shadow: 0 0 12px rgba(167,139,250,.25);
 }
 
-/* ===== Secciones por componente ===== */
 section, .section { margin-block: clamp(28px, 4vw, 56px); }
 
 /* Hero */
@@ -113,7 +103,7 @@ section, .section { margin-block: clamp(28px, 4vw, 56px); }
   border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px;
 }
 
-/* Skills (chips “legacy” que ya traías) */
+
 .skills { display: flex; flex-wrap: wrap; gap: 10px; }
 .skill-chip {
   display: inline-flex; align-items: center; gap: 8px;
@@ -167,7 +157,6 @@ section, .section { margin-block: clamp(28px, 4vw, 56px); }
   border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px;
 }
 
-/* ===== Bootstrap overrides ===== */
 .card {
   background: linear-gradient(180deg, rgba(24,29,46,.96), rgba(20,24,38,.92));
   border: 1px solid var(--line); border-radius: var(--radius-lg); color: var(--text);
@@ -216,7 +205,7 @@ footer small { color: #b7c2d6; }
 }
 .max-62ch { max-width: 62ch; }
 
-/* ===== Nueva capa “Skills” con panel e ítems violeta ===== */
+
 .skills-panel {
   position: relative;
   background: linear-gradient(180deg, rgba(19, 16, 34, .85), rgba(12, 14, 26, .85));
@@ -227,7 +216,7 @@ footer small { color: #b7c2d6; }
     inset 0 0 0 1px rgba(167, 139, 250, .06);
 }
 
-/* Brillo suave (neón violeta) */
+
 .skills-panel::after {
   content: "";
   position: absolute; inset: -2px;
@@ -236,14 +225,14 @@ footer small { color: #b7c2d6; }
   box-shadow: 0 0 0 2px rgba(167,139,250,.18), 0 0 40px rgba(139,92,246,.15);
 }
 
-/* Título de sección principal */
+
 .section-title-neon {
   color: var(--primary-300);
   text-shadow: 0 0 14px rgba(192,132,252,.45), 0 0 30px rgba(139,92,246,.25);
   font-weight: 800;
 }
 
-/* Subtítulo de panel */
+
 .section-subtitle {
   color: var(--primary-300);
   padding: 6px 10px;
@@ -253,7 +242,7 @@ footer small { color: #b7c2d6; }
   text-shadow: 0 0 10px rgba(167,139,250,.25);
 }
 
-/* Tile (cada skill) */
+
 .skill-tile {
   background: rgba(30, 27, 45, .85);
   border-radius: 16px;
@@ -274,7 +263,6 @@ footer small { color: #b7c2d6; }
     0 0 24px rgba(167,139,250,.20);
 }
 
-/* Icon wrapper */
 .skill-icon-wrap {
   width: 48px; height: 48px;
   display: grid; place-items: center;
@@ -282,7 +270,7 @@ footer small { color: #b7c2d6; }
   background: rgba(167,139,250,.06);
   border: 1px solid rgba(167,139,250,.18);
 }
-/* Hover de navbar más mint */
+
 .navbar .nav-link:hover, .navbar .nav-link:focus{
   color: var(--text);
   background: color-mix(in oklab, var(--primary-500) 18%, transparent);
@@ -314,10 +302,10 @@ footer small { color: #b7c2d6; }
   border-color: color-mix(in oklab, var(--primary-500) 40%, transparent);
   background: color-mix(in oklab, var(--primary-500) 10%, transparent);
 }
-/* === Tipografía: colores más legibles === */
+
 :root{
-  --text:  #F7FAFF;   /* texto principal bien claro */
-  --muted: #C9D4E6;   /* secundario más visible */
+  --text:  #F7FAFF;   
+  --muted: #C9D4E6;   
 }
 
 /* cuerpo del texto */
@@ -325,19 +313,18 @@ body, p, .card .card-text, .card p, .card li {
   color: var(--text);
 }
 
-/* párrafos del About (por si los tenías apagados) */
 #about p,
 .about p,
 .about .text-muted { 
   color: var(--text) !important;
 }
 
-/* subtítulos/labels y textos secundarios */
+
 .text-muted, .text-body-secondary, .form-text, small {
   color: var(--muted) !important;
 }
 
-/* títulos aún más nítidos */
+
 h1, h2, h3, h4, h5, h6,
 .card .card-title {
   color: #FFFFFF;
@@ -350,31 +337,29 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
-/* inputs: color del texto y placeholder */
 .form-control, .form-select, textarea { color: var(--text); }
 .form-control::placeholder, textarea::placeholder { color: #D7E1F0; }
 
-/* (opcional) color de la selección de texto al resaltar con el mouse */
+
 ::selection {
   background: color-mix(in oklab, var(--primary-500) 35%, #000);
-  color: #0A1020; /* texto oscuro sobre fondo mint/violeta */
+  color: #0A1020; 
 }
-/* === Skills: usa el mismo fondo del sitio === */
 
-/* La sección en sí no aporta fondo extra */
+
+
 #skills.section { background: transparent; }
 
-/* Panel de cada columna: del mismo tono que el resto */
+
 .skills-panel {
-  background: var(--surface);               /* antes tenía un gradiente distinto */
+  background: var(--surface);               
   border: 1px solid var(--line);
   box-shadow: var(--shadow-1);
 }
 
-/* Quita/elimina el halo violeta del panel (si lo tenías) */
+
 .skills-panel::after { box-shadow: none; }
 
-/* Título de cada panel: más sutil pero en tu paleta */
 .section-subtitle {
   color: var(--primary-300);
   background: color-mix(in oklab, var(--surface) 70%, transparent);
@@ -419,20 +404,20 @@ a:hover, a:focus {
     0 0 12px color-mix(in oklab, var(--primary-500) 30%, transparent),
     0 0 24px color-mix(in oklab, var(--primary-500) 18%, transparent);
 }
-/* Párrafos del bloque About: mismo color y mejor legibilidad */
+
 .about-text{
-  color: var(--text) !important;   /* igual que el resto del sitio */
+  color: var(--text) !important;   
   font-size: 1.05rem;
   line-height: 1.85;
   letter-spacing: .2px;
 }
 
-/* Si querés asegurar todos los <p> del about (por si alguno queda con text-muted) */
+
 #about p { color: var(--text) !important; }
-/* 1) Fuente para headings (si no la tienes aún) */
+
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap');
 
-/* 2) Certificaciones y Contacto: nueva fuente + color degradado */
+
 #certifications h2,
 #contact h2{
   font-family: Sora, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
@@ -441,19 +426,19 @@ a:hover, a:focus {
   line-height: 1.15;
   margin-bottom: .75rem;
 
-  /* color (degradado en tu paleta) */
+ 
   background: linear-gradient(90deg, var(--primary-300), var(--primary-500));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 
-  /* glow sutil */
+  
   text-shadow:
     0 0 10px color-mix(in oklab, var(--primary-500) 28%, transparent),
     0 0 22px color-mix(in oklab, var(--primary-500) 16%, transparent);
 }
 
-/* 3) (Opcional) subrayado suave debajo del título */
+
 #certifications h2::after,
 #contact h2::after{
   content:"";
@@ -488,7 +473,7 @@ a:hover, a:focus {
     0 0 22px color-mix(in oklab, var(--primary-500) 16%, transparent);
 }
 
-/* Subrayado suave debajo (igual que en cert/contact) */
+
 #projects h2::after,
 #skills h2::after{
   content: "";
@@ -503,7 +488,7 @@ a:hover, a:focus {
   );
   opacity: .6;
 }
-/* Sobre mí: mismo estilo de título (mint + glow) */
+
 #about h1,
 #about h2{
   font-family: Sora, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
@@ -551,3 +536,65 @@ body { padding-top: var(--nav-h); }
   color: #e8fff5;
   text-shadow: 0 0 12px rgba(69, 255, 199, 0.4);
 }
+/* === Quitar franja superior === */
+body {
+  padding-top: 0 !important;              /* antes usabas var(--nav-h) */
+}
+
+/* Navbar transparente y sin borde */
+.navbar {
+  background: transparent !important;
+  border-bottom: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Como ya no hay altura de navbar fija, reduce el offset del scroll anclado */
+.section {
+  scroll-margin-top: 16px !important;
+}
+
+/* Mantén solo el bloque inferior oscuro (el <main>) */
+.main-content.bg-dark {
+  background-color: #000 !important;      /* bloque negro puro */
+}
+/* Altura real del header */
+:root { --nav-h: 56px; }              /* 56–64px según tu navbar */
+
+/* Mantén la navbar transparente */
+.navbar{
+  background: transparent !important;
+  border-bottom: 1px solid transparent; /* o var(--line) si quieres línea sutil */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* No uses padding en <body> (evita franja superior) */
+body{ padding-top: 0 !important; }
+
+/* Empuja el contenido para que no quede oculto tras la navbar */
+main.main-content{ 
+  margin-top: var(--nav-h);
+}
+
+/* Un pelín más de separación en desktop si quieres */
+@media (min-width: 992px){
+  main.main-content{ margin-top: calc(var(--nav-h) + 8px); }
+}
+
+/* Al navegar con #anclas, que el título no quede debajo del header */
+.section{
+  scroll-margin-top: calc(var(--nav-h) + 12px) !important;
+}
+
+/* (Opcional) Cuando el menú está abierto en mobile, dale fondo al panel para legibilidad */
+@media (max-width: 991.98px){
+  .navbar .navbar-collapse{
+    background: rgba(0,0,0,.85);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: .5rem;
+    margin-top: .5rem;
+  }
+}
+

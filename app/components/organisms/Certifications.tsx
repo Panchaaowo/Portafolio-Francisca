@@ -1,4 +1,3 @@
-// app/components/organisms/Certifications.tsx
 import { Row, Col } from "react-bootstrap";
 import CertificationCard from "~/components/molecules/certifications/CertificationCard";
 import { certificationsData } from "~/data/certifications";

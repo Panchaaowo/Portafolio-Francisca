@@ -1,6 +1,5 @@
-// app/components/molecules/Header.tsx
+import { useState } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import Logo from "app/components/atoms/Logo";
 
 const LINKS = [
   { id: "about", label: "Sobre mí" },
@@ -11,41 +10,54 @@ const LINKS = [
 ];
 
 export default function Header() {
+  const [expanded, setExpanded] = useState(false);
+
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
+  const handleNavClick = (e: React.MouseEvent<HTMLElement>, id: string) => {
+    e.preventDefault();
+    scrollTo(id);
+    setExpanded(false); 
+  };
+
   return (
-    <Navbar expand="lg" sticky="top" bg="dark" variant="dark" className="border-bottom border-secondary">
+    <Navbar
+      expand="lg"
+      sticky="top"
+      bg="dark"
+      variant="dark"
+      className="border-bottom border-secondary"
+      expanded={expanded}              
+      onToggle={(val) => setExpanded(val)}
+    >
       <Container fluid>
-        {/* Izquierda: logo/brand */}
         <Navbar.Brand
           href="#about"
-          onClick={(e) => { e.preventDefault(); scrollTo("about"); }}
-          className="fw-bold brand-title"   // 👈 clase para color/fuente
+          onClick={(e) => handleNavClick(e, "about")}
+          className="fw-bold brand-title"
           aria-label="Portafolio"
         >
-          {/* Usa uno de los dos: tu Logo o el texto Portafolio */}
-          {/* <Logo /> */}
           Portafolio
         </Navbar.Brand>
 
-        {/* Hamburguesa en móvil */}
         <Navbar.Toggle aria-controls="main-nav" />
 
-        {/* Contenido colapsable */}
         <Navbar.Collapse id="main-nav" className="align-items-center w-100">
-          {/* Centro: links */}
+          {}
           <Nav className="mx-auto gap-3">
             {LINKS.map((l) => (
               <Nav.Link
                 key={l.id}
                 href={`#${l.id}`}
-                onClick={(e) => { e.preventDefault(); scrollTo(l.id); }}
+                onClick={(e) => handleNavClick(e, l.id)}
               >
                 {l.label}
               </Nav.Link>
             ))}
           </Nav>
+
+          {}
         </Navbar.Collapse>
       </Container>
     </Navbar>

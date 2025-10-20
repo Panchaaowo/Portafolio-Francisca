@@ -1,4 +1,3 @@
-// app/components/molecules/certifications/CertificationCard.tsx
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import {
@@ -15,7 +14,7 @@ type Props = {
   date: string;
   credentialId: string;
   image: string;
-  verifyUrl: string;     // ← requerido
+  verifyUrl: string;     
 };
 
 export default function CertificationCard({
